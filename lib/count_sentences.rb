@@ -27,7 +27,9 @@ class String
   end
 
   def count_sentences
-    arr = self.split(".", "!")
-    arr.length
+    arr = self.split(" ")
+    num = 0
+    arr.each {|item| if item.end_with?(".", "?", "!") {num += 1} }
+    num
   end
 end
